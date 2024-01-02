@@ -1,0 +1,18 @@
+<div>
+    <input placeholder="'Type here...'" [(ngModel)]="editorContent" />
+    <div class="flex justify-end mt-2">
+        <button class="btn bg-amber-600 text-black hover:bg-amber-700 rounded-lg p-2"
+            (click)="handleSubmitComment(editorContent)">Submit Comment</button>
+    </div>
+    <div>Commentaires</div>
+    <div *ngFor="let comment of comments">
+        <div class="flex">
+            <div class="mr-4">
+                {{comment.userName}}
+            </div>
+            <div>
+                {{comment.commentBody}}
+            </div>
+        </div>
+    </div>
+</div>

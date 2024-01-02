@@ -1,0 +1,14 @@
+<div class="flex flex-col justify-center items-center">
+    <div class="text-3xl font-bold text-center mt-6 mb-4">Favorites List</div>
+    <div class="grid grid-cols-3 gap-6 mt-10">
+        <div *ngFor="let film of films"
+            class="flex flex-col items-center shadow-md p-4 hover:scale-[97%] cursor-pointer">
+            <a>
+                <img [routerLink]="['/films', film.id]" [src]="'https://image.tmdb.org/t/p/w500/' + film.imageUrl"
+                    alt="{{ film.title }}" class="w-40 h-56 object-cover mb-2">
+            </a>
+            <div class="text-center font-bold">{{ film.title }}</div>
+            <div class="text-center">{{ film.year }}</div>
+        </div>
+    </div>
+</div>

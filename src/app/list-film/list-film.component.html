@@ -1,0 +1,12 @@
+<div>
+    <div class="flex flex-col justify-center items-center">
+        <app-search-bar (searchFieldChange)="onSearchFieldChange($event)"></app-search-bar>
+        <div class="grid grid-cols-3 gap-4 m-10">
+            <div *ngFor="let film of films">
+                <app-film-item [film]="film"></app-film-item>
+            </div>
+        </div>
+        <app-pagination (pageChange)="onPageChange($event)"></app-pagination>
+    </div>
+
+</div>

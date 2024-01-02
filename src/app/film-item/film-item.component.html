@@ -1,0 +1,16 @@
+<div
+    class="card card-compact bg-base-100 shadow-xl h-full cursor-pointer transition duration-500 hover:scale-[97%]">
+    <figure class="h-3/4">
+        <a [routerLink]="['/films', film.id]">  
+            <img src="https://image.tmdb.org/t/p/w500/{{film.imageUrl}}" alt={{film.title}} class="h-full w-full"  />
+        </a>
+    </figure>
+    <div class="card-body h-/1/4">
+        <h2 class="card-title">{{film.title}}</h2>
+        <div class="card-actions justify-end">
+            <p>
+                {{film.year}}
+            </p>
+        </div>
+    </div>
+</div>

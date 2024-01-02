@@ -1,0 +1,20 @@
+<div class="flex flex-col bg-black w-full">
+    <h2>Don't have an account?</h2>
+    <span>Sign Up with Your Email and Password</span>
+    <form class="flex flex-col justify-center items-center w-2/3" >
+      <label for="displayName">Display Name</label>
+      <input type="text" id="displayName" name="displayName" formControlName="displayName" (input)="handleChange($event)">
+    
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" formControlName="email" (input)="handleChange($event)">
+    
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password"  formControlName="password" (input)="handleChange($event)">
+    
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" (input)="handleChange($event)">
+      <p>{{text}}</p>
+      <button type="submit" (click)="register($event)" class="btn w-1/3 mt-4">Sign Up</button>
+    </form>
+  </div>
+  
