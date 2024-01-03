@@ -28,6 +28,7 @@ export class ViewCommentsComponent {
   ngOnInit(): void {
 
     this.commentService.getCommentsByFilmId(this.filmId.toString()).subscribe((comments: any[]) => {
+      this.comments = [];
       for (const comment of comments) {
         this.userService.getUserById(comment.userId).subscribe((user: any) => {
           this.comments.push({
@@ -43,7 +44,7 @@ export class ViewCommentsComponent {
   handleSubmitComment(commentBody: string) {
 
     this.userService.getUser().subscribe((user) => {
-      if(!user){
+      if(!user?.userId){
         this.route.navigate(['/login']);
         return;
       }

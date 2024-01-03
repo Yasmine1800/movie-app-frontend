@@ -1,16 +1,17 @@
-<div>
-    <input placeholder="'Type here...'" [(ngModel)]="editorContent" />
+<div class="bg-base-100">
+    <h1  class="text-white mb-4">Add a comment</h1>
+    <input class="text-white focus:outline-none w-1/2 bg-transparent border border-amber-800 p-2 rounded-lg" placeholder="'Type here...'" [(ngModel)]="editorContent" />
     <div class="flex justify-end mt-2">
         <button class="btn bg-amber-600 text-black hover:bg-amber-700 rounded-lg p-2"
             (click)="handleSubmitComment(editorContent)">Submit Comment</button>
     </div>
-    <div>Commentaires</div>
-    <div *ngFor="let comment of comments">
-        <div class="flex">
-            <div class="mr-4">
+    <h1  class="text-white mb-4">Commentaires</h1>
+    <div *ngFor="let comment of comments" class="border border-amber-800">
+        <div class="p-3 w-full border-y border-amber-800">
+            <h1 class="font-bold test-xl text-xl">
                 {{comment.userName}}
-            </div>
-            <div>
+            </h1>
+            <div class="ml-3">
                 {{comment.commentBody}}
             </div>
         </div>

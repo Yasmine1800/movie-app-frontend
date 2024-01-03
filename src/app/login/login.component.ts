@@ -4,13 +4,13 @@ import { Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import { loginUser } from '../../firebase';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

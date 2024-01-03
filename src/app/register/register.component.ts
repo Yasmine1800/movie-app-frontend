@@ -5,12 +5,12 @@ import { FormControl } from '@angular/forms';
 import { registerUser } from '../../firebase';
 import { Validators } from '@angular/forms';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -80,13 +80,9 @@ export class RegisterComponent {
         this.text = 'Email already in use';
       }
     }
-
-
-
-    // console.log(userCred?.user?.uid);
-
-    
-     
+  }
+  handleContinueAsGuest() {
+    this.router.navigate(['/films']);
   }
 
 }
